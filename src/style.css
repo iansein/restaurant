@@ -141,9 +141,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  gap: 30px;
+  background-color: #5d823d;
 }
 
 #content {
+  background-color: #5d823d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex: 1;
 }
 
@@ -194,7 +200,7 @@ body {
 }
 
 .link:hover {
-  color: #0e870e;
+  color: #5d823d;
 }
 
 .footer {
@@ -207,6 +213,67 @@ body {
 }
 
 .footer h2 {
+  font-family: Milestone;
   font-size: 26px;
   color: #ffff;
+}
+
+.home-container,
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 50%;
+  min-width: 30vh;
+  height: 100%;
+  background-color: #fc9995;
+  border: 2px solid #ffff;
+  padding: 36px;
+  border-radius: 10px;
+}
+
+.home-img,
+.contact-img {
+  align-self: center;
+  width: 80%;
+  max-height: 50vh;
+  border-radius: 20px;
+  border: 5px solid #ffff;
+  object-fit: cover;
+}
+
+.welcome-para {
+  width: 100%;
+  background-color: #004993;
+  padding: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #ffff;
+  font-size: 20px;
+  font-weight: 800;
+  border-radius: 10px;
+  border: 1px solid #ffff;
+  font-style: italic;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-para {
+  overflow: auto;
+  width: 80%;
+  flex-shrink: 1;
+  background-color: #004993;
+  padding: 0.625rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: #ffff;
+  font-size: 1.625rem;
+  font-weight: 800;
+  border-radius: 0.625rem;
+  border: 1px solid #ffff;
+  font-style: italic;
 }
