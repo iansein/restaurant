@@ -130,21 +130,83 @@ table {
 
 /* My styles */
 
-#content {
+@font-face {
+  font-family: "Milestone";
+  src: url("./assets/milestone.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+body {
   display: flex;
-  font-size: 1rem;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#content {
+  flex: 1;
 }
 
 .navbar {
-  background-color: #424242;
+  font-family: Milestone;
+  background-color: #8f2e2e;
   height: 6.25rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 25px;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 }
 
 .logo {
-  width: 50px;
+  width: 80px;
   height: auto;
+  margin-left: 0.625rem;
+}
+
+.title {
+  font-size: 36px;
+  color: #ffff;
+}
+
+.link-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  gap: 20px;
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-right: 1.5625rem;
+  color: #ffff;
+}
+
+.link {
+  cursor: pointer;
+  color: inherit;
+}
+
+.link:hover {
+  color: #0e870e;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.25rem;
+  width: 100%;
+  background-color: #8f2e2e;
+}
+
+.footer h2 {
+  font-size: 26px;
+  color: #ffff;
 }

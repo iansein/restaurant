@@ -1,6 +1,7 @@
 const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -26,23 +27,23 @@ module.exports = {
         ],
       },
       {
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: "./",
-            },
-          },
-          "css-loader",
-        ],
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(jpe?g|png|gif|svg|webp)$/i,
-        use: ["file-loader?name=assets/[name].[ext]", "image-webpack-loader"],
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext]",
+        },
+        use: ["image-webpack-loader"],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        use: ["file-loader?name=assets/[name].[ext]"],
+        type: "asset/resource",
+        generator: {
+          filename: "assets/[name][ext]",
+        },
       },
     ],
   },
@@ -52,5 +53,6 @@ module.exports = {
       filename: "./index.html",
     }),
     new MiniCssExtractPlugin(),
+    new CleanWebpackPlugin(),
   ],
 };

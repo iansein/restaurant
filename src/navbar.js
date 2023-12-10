@@ -1,20 +1,39 @@
 export function navBar() {
-  const $container = document.querySelector("#content");
-
-  const $navBarDiv = document.createElement("div");
+  const $body = document.body;
+  const $header = document.createElement("header");
+  const $navBarDiv = document.createElement("nav");
+  const $brandDiv = document.createElement("div");
   const $logo = document.createElement("img");
+  const $title = document.createElement("h1");
   const $linkList = document.createElement("ul");
-  const $links = document.createElement("li");
+  const $home = document.createElement("li");
+  const $menu = document.createElement("li");
+  const $contact = document.createElement("li");
 
-  $logo.src = "./assets/logo.png";
+  const arrayLinks = [$home, $menu, $contact];
+
+  $home.textContent = "Home";
+  $menu.textContent = "Menu";
+  $contact.textContent = "Contact";
+  $title.textContent = "Papa's Pizzeria";
+
+  $logo.src = "./assets/logo.webp";
 
   $navBarDiv.classList.add("navbar");
+  $brandDiv.classList.add("brand");
   $logo.classList.add("logo");
+  $title.classList.add("title");
   $linkList.classList.add("link-list");
-  $links.classList.add("links");
 
-  $container.appendChild($navBarDiv);
-  $navBarDiv.appendChild($logo);
+  arrayLinks.forEach((item) => {
+    item.classList.add("link");
+    $linkList.appendChild(item);
+  });
+
+  $body.insertBefore($header, $body.firstChild);
+  $header.appendChild($navBarDiv);
+  $navBarDiv.appendChild($brandDiv);
+  $brandDiv.appendChild($logo);
+  $brandDiv.appendChild($title);
   $navBarDiv.appendChild($linkList);
-  $linkList.appendChild($links);
 }
