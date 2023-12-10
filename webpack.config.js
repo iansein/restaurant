@@ -10,6 +10,7 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
+  devtool: "inline-source-map",
   devServer: {
     static: "./dist",
   },
@@ -54,5 +55,16 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
     new CleanWebpackPlugin(),
+  ],
+  ignoreWarnings: [
+    {
+      module: /module2\.js\?[34]/, // A RegExp
+    },
+    {
+      module: /[13]/,
+      message: /homepage/,
+    },
+    /warning from compiler/,
+    (warning) => true,
   ],
 };

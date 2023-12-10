@@ -3,7 +3,7 @@ export function footer() {
   const $footer = document.createElement("footer");
   const $copyright = document.createElement("h2");
 
-  $copyright.textContent = "Create by Ian Sein 2023";
+  $copyright.textContent = "Created by Ian Sein 2023";
 
   $footer.classList.add("footer");
   $body.appendChild($footer);
