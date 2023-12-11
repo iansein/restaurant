@@ -151,6 +151,7 @@ body {
   justify-content: center;
   align-items: center;
   flex: 1;
+  padding: 20px;
 }
 
 .navbar {
@@ -219,7 +220,8 @@ body {
 }
 
 .home-container,
-.contact-container {
+.contact-container,
+.menu-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -232,6 +234,10 @@ body {
   border: 2px solid #ffff;
   padding: 36px;
   border-radius: 10px;
+}
+
+.menu-container {
+  min-width: 40vh;
 }
 
 .home-img,
@@ -276,4 +282,37 @@ body {
   border-radius: 0.625rem;
   border: 1px solid #ffff;
   font-style: italic;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #8f2e2e;
+  padding: 24px;
+  border-radius: 10px;
+}
+
+.img-card {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-para {
+  color: #ffff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 800;
 }
